@@ -2,6 +2,9 @@
 
 Bidirektionaler Telefon-Dolmetscher: Mensch ↔ Kunde, **ohne LLM**.
 
+Repo: https://github.com/d-selmanovic/soniox-translator-relay
+Tracking: GitHub Issues (Labels: v1 / core / telephony / voice / setup)
+
 Mensch (Bosnisch) spricht ins Telefon → Soniox Speech-to-Text-Translation (bs→de) →
 Soniox TTS mit geklonter Stimme → Kunde hört Deutsch.
 Kunde (Deutsch) → Soniox Translation (de→bs) → Soniox TTS (andere Stimme) → Mensch hört Bosnisch.
