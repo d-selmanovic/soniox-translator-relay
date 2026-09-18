@@ -35,3 +35,5 @@ geprüfte Fakten: `docs/verified-facts.md`, Planung: `docs/roadmap.md`.
 - Roadmap-Punkte V2/V3 sind Planung — nicht vor V1-Abschluss implementieren.
 - Status-Änderungen in `README.md` pflegen.
 - Fertig bedeutet: getestet (LiveKit console mode oder Simulation), nicht nur compiliert.
+- Session-Kontext/Wiedereinstieg: `docs/session-handoff.md` (Session-ID,
+  nächste Schritte, verwandte Orte wie das Soniox Wiki).

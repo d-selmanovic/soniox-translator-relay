@@ -20,14 +20,21 @@ Kunde (Deutsch) → Soniox Translation (de→bs) → Soniox TTS (andere Stimme) 
 
 - [x] Machbarkeit verifiziert (Soniox-Doku, LiveKit-Doku, installierte SDKs)
 - [x] LiveKit-CLI verbunden (Cloud-Projekte vorhanden)
-- [ ] SDK-Umgebung (venv) einrichten
-- [ ] LiveKit-Docs-MCP anbinden
-- [ ] Minimal-Relay (STT→TTS ohne LLM) implementieren
-- [ ] SIP-Telefonie-Anbindung testen
-- [ ] Stimmenklon einrichten (eigene Stimme für bs→de-Richtung)
+- [x] SDK-Umgebung (venv) — livekit-agents 1.8.2, Plugins aktuell
+- [x] Code-Verifikation: `llm=None`, Translation-Config, Relay-Mechanismus
+- [x] GitHub-Repo (public) + Issues #1–#5; alle SDKs/CLIs auf neuestem Stand
+- [ ] Soniox API-Key in `.env` (Issue #2)
+- [ ] LiveKit-Docs-MCP anbinden (Issue #5)
+- [ ] Minimal-Relay (STT→TTS ohne LLM) implementieren (Issue #1)
+- [ ] SIP-Telefonie-Anbindung testen (Issue #3)
+- [ ] Stimmenklon einrichten (eigene Stimme für bs→de-Richtung) (Issue #4)
+
+Wiederaufsetzen nach Session-Ende: [`docs/session-handoff.md`](docs/session-handoff.md)
 
 ## Dokumentation
 
 - [`docs/architecture.md`](docs/architecture.md) — Zielarchitektur und Datenfluss
 - [`docs/verified-facts.md`](docs/verified-facts.md) — geprüfte Fakten inkl. Fehlerkorrekturen
 - [`docs/setup.md`](docs/setup.md) — Installations- und Einrichtungsschritte
+- [`docs/roadmap.md`](docs/roadmap.md) — V1 (aktuell), V2 (Whisper-Coach), V3 (OpenAI-Rebuild)
+- [`docs/session-handoff.md`](docs/session-handoff.md) — Session-ID und Wiedereinstieg
