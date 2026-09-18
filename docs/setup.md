@@ -38,3 +38,15 @@ cp .env.example .env
 
 - `.env` liegt im `.gitignore` — API-Keys niemals committen
 - Der `lk project list`-Output enthält API-Keys → nicht in Doku/Commits übernehmen
+
+## Versions-Pinning (Wichtig)
+
+`livekit-agents` pinn einige Abhängigkeiten **exakt** (u. a. `livekit==1.1.18`,
+`json-repair==0.60.1`). Ein blindes `pip install --upgrade <paket>` bricht die
+Konsistenz. Nach Updates immer prüfen:
+
+```bash
+.venv/bin/pip check        # muss "No broken requirements found" melden
+```
+
+Stand 2026-09-18: livekit-agents 1.8.2, livekit 1.1.18, gh 2.101.0, livekit-cli 2.18.7
