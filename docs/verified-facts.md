@@ -42,12 +42,25 @@ Das Plugin wird im LiveKit-Agents-Monorepo gepflegt
 Soniox-Seite gesucht. Konsequenz: Ein Vendor für beide Enden, Bosnisch nativ,
 eigene Stimme klonbar. Externer TTS war unnötig und wäre für bs schlechter gewesen.
 
+## Code-Verifikation (installierte SDKs, livekit-agents 1.8.2)
+
+10. **`AgentSession` akzeptiert `llm=None`** — im Quellcode bestätigt
+    (`agent_session.py`: `self._llm = ... (llm or None)`). LLM-freier Betrieb
+    ist im Framework vorgesehen, nicht ein Hack.
+11. **Soniox-STT-Plugin hat Translation nativ:** `STTOptions.translation` mit
+    `TranslationConfig(type="one_way", target_language=...)` — im Plugin-Quellcode
+    (`stt.py`) vorhanden und wird in die WebSocket-Config serialisiert.
+12. **Relay-Mechanismus vorhanden:** Session emittiert `user_input_transcribed`
+    (übersetzte Finals) und `session.say(text)` spricht TTS. Damit lässt sich
+    STT→TTS-Durchleitung ohne LLM direkt auf Session-Ebene bauen.
+13. Installiert: `livekit-agents 1.8.2`, `livekit-plugins-soniox 1.8.2`,
+    `livekit-plugins-silero 1.8.2` (venv im Projektordner).
+
 ## Umgebung
 
 - LiveKit-CLI 2.18.6 installiert, mit LiveKit Cloud verbunden
   (Projekte u. a. `aai`, `activi`, `energy`; Default: `aai`)
 - Soniox-Docs-MCP angebunden; LiveKit-Docs-MCP noch offen
-- SDK-Installation (`livekit-agents[soniox,silero]~=1.5`) noch offen
 
 ## Historische Kontextnotiz: Home-Verzeichnis
 
